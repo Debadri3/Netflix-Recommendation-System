@@ -7,13 +7,13 @@ import numpy as np
 filename = 'netflix_xgb1.pkl'
 regressor = pickle.load(open(filename, 'rb'))
 
-app = Flask(__name__)
+application = Flask(__name__)
 
-@app.route('/')
+@application.route('/')
 def home():
 	return render_template('index.html')
 
-@app.route('/predict', methods=['POST'])
+@application.route('/predict', methods=['POST'])
 def predict():
     temp_array = list()
     
@@ -39,9 +39,9 @@ def predict():
             
         
               
-    return render_template('index.html', prediction_text='The rating for the user-movie pair should be around {}'.format(prediction))
+    return render_template('index.html', prediction_text='The rating for the user-movie pair should be around {}'.format(np.round(prediction,2)))
 
 
 
 if __name__ == '__main__':
-	app.run(debug=True)
+	application.run(debug=True)

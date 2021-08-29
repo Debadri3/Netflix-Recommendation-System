@@ -1,29 +1,33 @@
 <!DOCTYPE html>
 
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Netflix Recommender System</title>
-        <link rel="shortcut icon" href="{{ url_for('static', filename='netflix.ico') }}">
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
-        <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
-        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
-    </head>
 
-    <body>
+<head>
+    <meta charset="utf-8">
+    <title>Netflix Recommender System</title>
+    <link rel="shortcut icon" href="{{ url_for('static', filename='netflix.ico') }}">
+    <link rel="stylesheet" type="text/css" href="../static/styles.css">
+    <script src="https://kit.fontawesome.com/5f3f547070.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
 
-        <!-- Website Title -->
-    	<div class="container">
-            <h2 class='container-heading'><span class='heading_first'>Recommender System for </span><span class="heading_second">Netflix</span></h2>
-            <div class='description'>
-    			<p>A Machine Learning Web App, Built with Flask, Deployed using Heroku.</p>
-    		</div>
-    	</div>
+<body>
+    <!-- Website Title -->
+    <div class="container">
+        <h2 class='container-heading'><span class='heading_first'>Recommender System for </span><span
+                class="heading_second">Netflix</span></h2>
+        <div class='description'>
+            <p>A Machine Learning Web App, Built with Flask, Deployed using AWS BeanStalk</p>
+        </div>
+        <p>Please insert all inputs as real numbers between 1-5</p>
+    </div>
 
-        <!-- Prediction Area -->
+    <!-- Prediction Area -->
+    <div>
         <div class="prediction-area">
-
-            <!-- IPL Banner - 1 -->
+            <!-- TV series Banner - 1 -->
             <div class='ipl-banner-left'>
 
                 <div class="slider-frame">
@@ -31,35 +35,43 @@
 
                         <!-- Image-1 -->
                         <div class="image-container">
-                            <img class="image-width" src="{{ url_for('static', filename='brba.jpg') }}" alt="Breaking Bad">
+                            <img class="image-width" src="{{ url_for('static', filename='brba.jpg') }}"
+                                alt="Breaking Bad">
                         </div>
                         <!-- Image-2 -->
                         <div class="image-container">
-                            <img class="image-width" src="{{ url_for('static', filename='friends.jpg') }}" alt="Friends">
+                            <img class="image-width" src="{{ url_for('static', filename='friends.jpg') }}"
+                                alt="Friends">
                         </div>
                         <!-- Image-3 -->
                         <div class="image-container">
-                            <img class="image-width" src="{{ url_for('static', filename='got.jpg') }}" alt="Game of Thrones">
+                            <img class="image-width" src="{{ url_for('static', filename='got.jpg') }}"
+                                alt="Game of Thrones">
                         </div>
                         <!-- Image-4 -->
                         <div class="image-container">
-                            <img class="image-width" src="{{ url_for('static', filename='mirzapur.jpg') }}" alt="Mirzapur">
+                            <img class="image-width" src="{{ url_for('static', filename='mirzapur.jpg') }}"
+                                alt="Mirzapur">
                         </div>
                         <!-- Image-5 -->
                         <div class="image-container">
-                            <img class="image-width" src="{{ url_for('static', filename='heist.jpg') }}" alt="Money Heist">
+                            <img class="image-width" src="{{ url_for('static', filename='heist.jpg') }}"
+                                alt="Money Heist">
                         </div>
                         <!-- Image-6 -->
                         <div class="image-container">
-                            <img class="image-width" src="{{ url_for('static', filename='sherlock.jpg') }}" alt="Sherlock">
+                            <img class="image-width" src="{{ url_for('static', filename='sherlock.jpg') }}"
+                                alt="Sherlock">
                         </div>
                         <!-- Image-7 -->
                         <div class="image-container">
-                            <img class="image-width" src="{{ url_for('static', filename='blinders.jpg') }}" alt="Peaky Blinders">
+                            <img class="image-width" src="{{ url_for('static', filename='blinders.jpg') }}"
+                                alt="Peaky Blinders">
                         </div>
                         <!-- Image-8 -->
                         <div class="image-container">
-                            <img class="image-width" src="{{ url_for('static', filename='office.jpg') }}" alt="The Office">
+                            <img class="image-width" src="{{ url_for('static', filename='office.jpg') }}"
+                                alt="The Office">
                         </div>
 
                     </div>
@@ -70,32 +82,39 @@
             <!-- Prediction Form -->
             <div class='div2'>
                 <form action="{{ url_for('predict') }}" method="POST">
-                    
-                    <input class="form-input" type="text" name="glob_avg" placeholder="Global average till now"><br>
-                    <input class="form-input" type="text" name="sur1" placeholder="1st most similar user rating"><br>
-                    <input class="form-input" type="text" name="sur2" placeholder="2nd most similar user rating"><br>
-                    <input class="form-input" type="text" name="sur3" placeholder="3rd most similar user rating"><br>
-                    <input class="form-input" type="text" name="sur4" placeholder="4th most similar user rating"><br>
-                    <input class="form-input" type="text" name="sur5" placeholder="5th most similar user rating"><br>
-                    <input class="form-input" type="text" name="smr1" placeholder="1st most similar movie rating"><br>
-                    <input class="form-input" type="text" name="smr2" placeholder="1st most similar movie rating"><br>
-                    <input class="form-input" type="text" name="smr3" placeholder="1st most similar movie rating"><br>
-                    <input class="form-input" type="text" name="smr4" placeholder="1st most similar movie rating"><br>
-                    <input class="form-input" type="text" name="smr5" placeholder="1st most similar movie rating"><br>
-                    <input class="form-input" type="text" name="u_avg" placeholder="User average rating"><br>
-                    <input class="form-input" type="text" name="m_avg" placeholder="Movie average rating"><br>
+                    <input class="form-input" type="text" name="glob_avg" placeholder="Global average till now" required="required"><br>
+                    <input class="form-input" type="text" name="sur1" placeholder="1st most similar user rating" required="required"><br>
+                    <input class="form-input" type="text" name="sur2" placeholder="2nd most similar user rating" required="required"><br>
+                    <input class="form-input" type="text" name="sur3" placeholder="3rd most similar user rating" required="required"><br>
+                    <input class="form-input" type="text" name="sur4" placeholder="4th most similar user rating" required="required"><br>
+                    <input class="form-input" type="text" name="sur5" placeholder="5th most similar user rating" required="required"><br>
+                    <input class="form-input" type="text" name="smr1" placeholder="1st most similar movie rating" required="required"><br>
+                    <input class="form-input" type="text" name="smr2" placeholder="1st most similar movie rating" required="required"><br>
+                    <input class="form-input" type="text" name="smr3" placeholder="1st most similar movie rating" required="required"><br>
+                    <input class="form-input" type="text" name="smr4" placeholder="1st most similar movie rating" required="required"><br>
+                    <input class="form-input" type="text" name="smr5" placeholder="1st most similar movie rating" required="required"><br>
+                    <input class="form-input" type="text" name="u_avg" placeholder="User average rating" required="required"><br>
+                    <input class="form-input" type="text" name="m_avg" placeholder="Movie average rating" required="required"><br>
+                    <button type="submit" class="btn btn-outline-success">Predict</button>
+                    <br>
+                    {{ prediction_text }}
+                    <br>
+                    <br>
+                    <div class='description'>
+                        <p>Made with ❤️ by Debadri Sengupta</p>
+                        <a target="_blank" href="https://github.com/Debadri3/Netflix-Recommendation-System/"><i
+                                class="fab fa-github fa-lg contact-icon" aria-hidden="true"></i></a>
 
-
-                    
-
-                    <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
-        	</form>
-            <br>
-            <br>
-            {{ prediction_text }}
+                        <a target="_blank" href="https://www.linkedin.com/in/debadri-sengupta-61665a14b/"><i
+                                class="fab fa-linkedin fa-lg contact-icon" aria-hidden="true"></i></a>
+                    </div>
+                </form>
+                <br>
+                <br>
+                
             </div>
 
-            <!-- IPL Banner - 2 -->
+            <!-- TV series Banner - 2 -->
             <div class='ipl-banner-right'>
 
                 <div class="slider-frame">
@@ -103,51 +122,63 @@
 
                         <!-- Image-1 -->
                         <div class="image-container">
-                            <img class="image-width" src="{{ url_for('static', filename='brba.jpg') }}" alt="Breaking Bad">
+                            <img class="image-width" src="{{ url_for('static', filename='brba.jpg') }}"
+                                alt="Breaking Bad">
                         </div>
                         <!-- Image-2 -->
                         <div class="image-container">
-                            <img class="image-width" src="{{ url_for('static', filename='friends.jpg') }}" alt="Friends">
+                            <img class="image-width" src="{{ url_for('static', filename='friends.jpg') }}"
+                                alt="Friends">
                         </div>
                         <!-- Image-3 -->
                         <div class="image-container">
-                            <img class="image-width" src="{{ url_for('static', filename='got.jpg') }}" alt="Game of Thrones">
+                            <img class="image-width" src="{{ url_for('static', filename='got.jpg') }}"
+                                alt="Game of Thrones">
                         </div>
                         <!-- Image-4 -->
                         <div class="image-container">
-                            <img class="image-width" src="{{ url_for('static', filename='mirzapur.jpg') }}" alt="Mirzapur">
+                            <img class="image-width" src="{{ url_for('static', filename='mirzapur.jpg') }}"
+                                alt="Mirzapur">
                         </div>
                         <!-- Image-5 -->
                         <div class="image-container">
-                            <img class="image-width" src="{{ url_for('static', filename='heist.jpg') }}" alt="Money Heist">
+                            <img class="image-width" src="{{ url_for('static', filename='heist.jpg') }}"
+                                alt="Money Heist">
                         </div>
                         <!-- Image-6 -->
                         <div class="image-container">
-                            <img class="image-width" src="{{ url_for('static', filename='sherlock.jpg') }}" alt="Sherlock">
+                            <img class="image-width" src="{{ url_for('static', filename='sherlock.jpg') }}"
+                                alt="Sherlock">
                         </div>
                         <!-- Image-7 -->
                         <div class="image-container">
-                            <img class="image-width" src="{{ url_for('static', filename='blinders.jpg') }}" alt="Peaky Blinders">
+                            <img class="image-width" src="{{ url_for('static', filename='blinders.jpg') }}"
+                                alt="Peaky Blinders">
                         </div>
                         <!-- Image-8 -->
                         <div class="image-container">
-                            <img class="image-width" src="{{ url_for('static', filename='office.jpg') }}" alt="The Office">
+                            <img class="image-width" src="{{ url_for('static', filename='office.jpg') }}"
+                                alt="The Office">
                         </div>
 
                     </div>
                 </div>
-
             </div>
         </div>
+    </div>
 
-        <!-- Footer -->
-       <div class='footer'>
-           <div class="contact">
-               <a target="_blank" href="https://github.com/anujvyas/IPL-First-Innings-Score-Prediction-Deployment"><i class="fab fa-github fa-lg contact-icon"></i></a>
-               <a target="_blank" href="https://www.linkedin.com/in/anujkvyas"><i class="fab fa-linkedin fa-lg contact-icon"></i></a>
-           </div>
-           <p class='footer-description'>Made with ❤️ by Debadri Sengupta.</p>
-       </div>
 
-    </body>
+    <!-- Footer -->
+    <!-- <footer>
+    	
+            <h5 class='container-heading'><span class='heading_first'>Made with  by Debadri Sengupta </span><span class="heading_second"></span></h5>
+            <div class="nav">
+    			<a href="https://www.linkedin.com/in/debadri-sengupta-61665a14b/"><h6>LinkedIn</h6></a>
+                <a href="https://github.com/Debadri3/Netflix-Recommendation-System"><h6>GitHub</h6></a>
+    		</div>
+    	
+        </footer> -->
+
+</body>
+
 </html>
