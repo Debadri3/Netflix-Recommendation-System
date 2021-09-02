@@ -1,2 +1,9 @@
 # Netflix-Recommendation-System
-Please check the uploaded pdf for workflow description. Personal project for prediction of movies based on user-user similarity and movie-movie similarity matrix. Libraries used: Scikit-learn, Matplotlib, Seaborn, Numpy, Pandas, XGBoost, Scipy etc
+The uploaded pdf file describes my research workflow.
+Please visit this site (deployed on AWS Elastic Beanstalk): http://netflixrecommendersystem-env-2.eba-bv2amxdp.us-east-2.elasticbeanstalk.com/
+
+# Steps to run on your localhost-
+1. Clone the repository
+2. Install required packages (pip install -r requirements.txt)
+3. Run the 'application.py' file. (python application.py) 
+
