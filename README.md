@@ -1,7 +1,7 @@
 # Netflix-Recommendation-System
 The uploaded pdf file describes my research workflow.
 
-Please visit this site (deployed on AWS Elastic Beanstalk): http://netflixrecommendersystem-env-2.eba-bv2amxdp.us-east-2.elasticbeanstalk.com/
+Please visit this site (deployed on AWS Elastic Beanstalk): http://netflixrecommendersystem-env.eba-6irpjh2z.us-east-2.elasticbeanstalk.com/
 
 Credits for front-end design of the webpage: https://github.com/aditya083-etce
 
