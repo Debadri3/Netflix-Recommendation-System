@@ -1,7 +1,9 @@
 # Netflix-Recommendation-System
-The uploaded pdf file describes my research workflow.
+The uploaded pdf file describes my research workflow. Please read it.
 
-Please visit this site (deployed on AWS Elastic Beanstalk): http://netflixrecommendationsystem-env.eba-iat8iy3y.us-east-2.elasticbeanstalk.com/
+Heroku deployment URL: https://netflix-recommender-system-api.herokuapp.com
+
+Please visit this site (deployed on AWS Elastic Beanstalk) (inactive now): http://netflixrecommendationsystem-env.eba-iat8iy3y.us-east-2.elasticbeanstalk.com/
 
 Credits for front-end design of the webpage: https://github.com/aditya083-etce
 
