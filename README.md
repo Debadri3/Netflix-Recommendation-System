@@ -1,4 +1,7 @@
 # Netflix-Recommendation-System
+
+Any recommender system problem can be posed both as a matrix factorization as well as regression problem. This is a beautiful project where I have tried to combine features from both to ultimately solve the problem.
+
 The uploaded pdf file describes my research workflow. Please read it.
 
 Heroku deployment URL: https://netflix-recommender-system-api.herokuapp.com
